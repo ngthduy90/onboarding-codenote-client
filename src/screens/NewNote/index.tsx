@@ -5,8 +5,12 @@ import LoaderButton from "../../components/LoaderButton";
 import { s3Upload } from '../../libs/awsLib'
 import config from "../../config";
 import "./index.css";
+import { NewNoteProps } from "./new-note-props";
+import { NewNoteState } from "./new-note-state";
 
-export default class NewNote extends Component {
+export default class NewNote extends Component<NewNoteProps, NewNoteState> {
+  file: any;
+  
   constructor(props) {
     super(props);
 

@@ -7,8 +7,9 @@ import logo from './logo.svg';
 import './App.css';
 import { userHasAuthenticated } from './actions/authenticate';
 import ScreensRoot from './screens/Root';
+import { AppProps, AppState } from './types/app-type';
 
-class App extends Component {
+class App extends Component<AppProps, AppState> {
   constructor(props) {
     super(props);
 

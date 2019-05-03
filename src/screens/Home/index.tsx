@@ -6,8 +6,11 @@ import { PageHeader, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { userHasAuthenticated } from '../../actions/authenticate';
 import "./index.css";
+import { HomeProps } from './home-props';
+import { HomeState } from './home-state';
+import { Note } from '../../types/note-type';
 
-class Home extends Component {
+class Home extends Component<HomeProps, HomeState> {
   constructor(props) {
     super(props);
 
@@ -33,11 +36,12 @@ class Home extends Component {
   }
 
   notes() {
-    return API.get("notes", "/notes");
+    return API.get("notes", "/notes", null);
   }
 
-  renderNotesList(notes) {
-    return [{}].concat(notes).map(
+  renderNotesList(notes: Array<Note>) {
+    let emptyNotes = new Array<Note>();
+    return emptyNotes.concat(notes).map(
       (note, i) =>
         i !== 0
           ? <LinkContainer

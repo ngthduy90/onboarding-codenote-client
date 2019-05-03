@@ -6,8 +6,10 @@ import { Auth } from 'aws-amplify';
 import LoaderButton from '../../components/LoaderButton';
 import { userHasAuthenticated } from '../../actions/authenticate';
 import "./index.css";
+import { LoginProps } from "./login-props";
+import { LoginState } from "./login-state";
 
-class Login extends Component {
+class Login extends Component<LoginProps, LoginState> {
   constructor(props) {
     super(props);
 

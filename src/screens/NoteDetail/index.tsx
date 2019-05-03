@@ -5,8 +5,12 @@ import './index.css';
 import LoaderButton from '../../components/LoaderButton';
 import config from '../../config';
 import { s3Upload } from '../../libs/awsLib';
+import { NoteDetailProps } from "./note-detail-props";
+import { NoteDetailState } from "./note-detail-state";
 
-class NoteDetail extends Component {
+class NoteDetail extends Component<NoteDetailProps, NoteDetailState> {
+  file: any;
+
   constructor(props) {
     super(props);
 
@@ -42,7 +46,7 @@ class NoteDetail extends Component {
   }
 
   getNote() {
-    return API.get("notes", `/notes/${this.props.match.params.id}`);
+    return API.get("notes", `/notes/${this.props.match.params.id}`, null);
   }
 
   saveNote(note) {
@@ -52,7 +56,7 @@ class NoteDetail extends Component {
   }
 
   deleteNote() {
-    return API.del('notes', `/notes/${this.props.match.params.id}`);
+    return API.del('notes', `/notes/${this.props.match.params.id}`, null);
   }
 
   validateForm() {

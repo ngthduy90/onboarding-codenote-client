@@ -8,8 +8,10 @@ import {
 import { Auth } from 'aws-amplify';
 import LoaderButton from '../../components/LoaderButton';
 import "./index.css";
+import { SignupProps } from "./signup-props";
+import { SignupState } from "./signup-state";
 
-class Signup extends Component {
+class Signup extends Component<SignupProps, SignupState> {
   constructor(props) {
     super(props);
 

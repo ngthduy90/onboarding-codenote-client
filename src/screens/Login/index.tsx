@@ -83,7 +83,7 @@ class Login extends Component {
   
   render() {
       return (
-        <div className="Login">
+        <div className="login-container">
           {this.renderForm()}
         </div>
       );

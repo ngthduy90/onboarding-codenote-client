@@ -1,9 +1,9 @@
-export enum ActionTypeEnum {
-  Auth_User='AUTH_USER'
+export const ActionTypes = {
+  AUTH_USER: 'AUTH_USER'
 }
 
 export const authenticateUser = isAuthenticated => ({
-  type: ActionTypeEnum.Auth_User,
+  type: ActionTypes.AUTH_USER,
   payload: {
     isAuthenticated
   }
